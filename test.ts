@@ -83,9 +83,9 @@ async function setLight() {
 }
 // let blah: boolean ;
 // setLightSwitch(blah);
-function add(a: number, b: number);
- function add(a: string, b: string);
+// function add(a: number, b: number);
+//  function add(a: string, b: string);
 
- function add(a,b) {
-  return a + b;
- }
+//  function add(a,b) {
+//   return a + b;
+//  }
