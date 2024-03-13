@@ -33,26 +33,25 @@
 // }
 
 class Square {
-    constructor(public width: number) {}
+  constructor(public width: number) {}
 }
 
 class Rectangle extends Square {
-    constructor(public width: number, public height: number){
-        super(width)
-    }
+  constructor(public width: number, public height: number) {
+    super(width);
+  }
 }
 type Shape = Square | Rectangle;
 function cal(shape: Shape) {
-    if (shape instanceof Rectangle) {
-        return shape.width * shape.height ;
-    } else {
-        return shape.width * shape.width;
-    }
+  if (shape instanceof Rectangle) {
+    return shape.width * shape.height;
+  } else {
+    return shape.width * shape.width;
+  }
 }
 
-
-function asNumber(val : number | string) : number {
-    return typeof(val) === 'string' ? Number(val) : val;
+function asNumber(val: number | string): number {
+  return typeof val === "string" ? Number(val) : val;
 }
 
 function setLightSwitch(value: boolean) {
@@ -67,5 +66,26 @@ function setLightSwitch(value: boolean) {
       console.log(`I'm afraid I can't do that.`);
   }
 }
-function turnLightOn() {}
-function turnLightOff() {}
+function turnLightOn() {
+  console.log("turnLightOn");
+}
+function turnLightOff() {
+  console.log("turnLightOff");
+}
+
+interface LightApiResponse {
+  lightSwitchValue: boolean;
+}
+async function setLight() {
+  const response = await fetch("/light");
+  const result: LightApiResponse = await response.json();
+  setLightSwitch(result.lightSwitchValue);
+}
+// let blah: boolean ;
+// setLightSwitch(blah);
+function add(a: number, b: number);
+ function add(a: string, b: string);
+
+ function add(a,b) {
+  return a + b;
+ }
