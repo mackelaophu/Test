@@ -214,8 +214,23 @@ function printVal<T extends Staff>(list: T[]) {
 const funcA = function (a: number): number {
   return 0;
 };
-const funcB = (a: number): number => {
+const funcB = (a: number, b: string): number => {
   return 0;
 };
 type BlahFunc = (a: number) => number;
 declare function BLohFunc(a: number): number;
+
+const funcC: typeof funcA = (a) => {
+  return 0;
+};
+const funcD: typeof funcB = (a, b) => {
+  return 0;
+};
+type TZigg = {
+  name: string;
+  skill: string[];
+}
+interface IZiggs {
+  name : string;
+  skill: string[];
+}
